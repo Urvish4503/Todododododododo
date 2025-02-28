@@ -10,16 +10,17 @@ public class Todos
     
     [Required]
     [MaxLength(100)]
-    public string Title { get; set; }
+    public string Title { get; set; } = string.Empty;
     
-    public string Content { get; set; }
-    
-    public bool IsCompleted { get; set; }
+    [Required]
+    public string Content { get; set; } = string.Empty;
+
+    public bool IsCompleted { get; set; } = false;
     
     public DateTime CreatedAt { get; set; }
     public DateTime? CompletedAt { get; set; }
     
     public int UserId { get; set; }
     [ForeignKey("UserId")]
-    public Users User { get; set; }
+    public Users User { get; set; } 
 }
